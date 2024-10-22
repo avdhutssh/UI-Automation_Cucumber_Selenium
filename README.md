@@ -50,24 +50,30 @@ This project follows the **Page Object Model (POM)** approach and includes compo
 ├── main/
 │   ├── java/
 │   │   ├── nba/
-│   │   │   ├── 1. Utilities/               # Common utility classes
+│   │   │   ├── 1. AutomationFramework/Utilities/               # Common utility classes
 │   │   │   │   ├── Base.java  # Parent class for Util classes and contain wait utils
 │   │   │   │   ├── BrowserDriverFactory.java  # Browser driver configuration
 │   │   │   │   ├── ElementUtils.java          # Methods for element interactions
 │   │   │   │   ├── FileUtils.java          # Methods for file handling
 │   │   │   │   ├── PropertyReader.java        # Reads properties from config files
-│   │   │   ├── 2. PageObjects/                # Page Object classes for NBA pages
+│   │   │   ├── 2. Warriors/PageObjects/                
 │   │   │   │   ├── WarriorsHomePage.java      # Home page interactions for Warriors website
 │   │   │   │   ├── WarriorsShopPage.java      # Shop page interactions
 │   │   │   │   ├── WarriorsNewsFeaturesPage.java  # News & Features interactions
+│   │   │   ├── 3. Bulls/PageObjects/                
+│   │   │   │   ├── BullsHomePage.java      # Home page interactions for Bulls website
+│   │   │   ├── 4. Sixers/PageObjects/               
+│   │   │   │   ├── SixersHomePage.java      # Home page interactions for Sixers website
 │   └── resources/                             # Configuration files (e.g., log4j.xml, config.properties)
 ├── test/
 │   ├── java/
 │   │   ├── nba/
-│   │   │   ├── 1. StepDefinitions/            # Step definitions for feature files
-│   │   │   │   ├── WarriorsSteps.java         # Step definitions for NBA Warriors scenarios
+│   │   │   ├── 1. StepDefinitions            # Step definitions for feature files
+│   │   │   │   ├── warriors/WarriorsSteps.java         # Step definitions for NBA Warriors page scenarios
+│   │   │   │   ├── bulls/BullsSteps.java         # Step definitions for NBA Bulls page scenarios
+│   │   │   │   ├── sixers/SixersSteps.java         # Step definitions for NBA Sixers page scenarios
 │   │   │   ├── 2. Hooks/                      # Cucumber hooks for setup/teardown
-│   │   │   ├── 3. Runners/                    # TestNG runner classes for Cucumber
+│   │   │   ├── 3. Runners/                    # TestNG runner class for Cucumber
 │   └── resources/                             # Feature files defining test scenarios
 │       └── Features/
 │           ├── coreProduct.feature            # Feature file for Core Product scenarios
