@@ -19,7 +19,9 @@ public class TestRunner extends AbstractTestNGCucumberTests {
     @BeforeClass
     public void setUp(ITestContext context) {
         String tags = context.getCurrentXmlTest().getParameter("cucumber.filter.tags");
+        System.out.println("Tag set is:  " + tags);
         if (tags != null && !tags.isEmpty()) {
+            System.out.println("Tag set is:  " + tags);
             System.setProperty("cucumber.filter.tags", tags);
         }
     }

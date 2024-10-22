@@ -1,7 +1,7 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="NBA Suite">
     <test name="RegressionTestCase">
-        <parameter name="cucumber.filter.tags" value="@Sanity"/>
+        <parameter name="cucumber.filter.tags" value="@Regression"/>
         <classes>
             <class name="nba.runners.TestRunner"/>
         </classes>
