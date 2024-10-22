@@ -126,6 +126,14 @@ mvn clean test -Dbrowser=firefox
 
 2. Count Video Feeds in News & Features Section: Navigates to the News & Features section, counts the total number of video feeds, and counts the feeds present for a specified number of days.
 
+### Derived Product 1 Scenarios
+
+1. Verify and retrive the title of each slide present below tickets menu 
+
+### Derived Product 2 Scenarios
+
+1. Find and store all the footer hyperlinks in a CSV file and report the duplicate footer links.
+
 ## 🎯 Reporting
 
 This project uses  **cucumber Reports** for detailed reporting of scenario executions, including logs, screenshots, and status updates.
