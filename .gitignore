@@ -1,0 +1,9 @@
+.classpath
+.project
+.settings/
+*.png
+*.gif
+*.css
+*.iml
+target/
+.idea/
