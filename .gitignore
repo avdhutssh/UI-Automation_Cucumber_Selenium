@@ -5,5 +5,7 @@
 *.gif
 *.css
 *.iml
-target/
+target/*
+!target/cucumber-reports/
+!target/cucumber-reports/cucumber-html-report.html
 .idea/
