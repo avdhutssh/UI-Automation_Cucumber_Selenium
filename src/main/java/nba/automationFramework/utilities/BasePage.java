@@ -11,6 +11,9 @@ import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 public class BasePage {
@@ -27,6 +30,17 @@ public class BasePage {
         this.js = (JavascriptExecutor) driver;
         prop = PropertyReader.getInstance();
         PageFactory.initElements(driver, this);
+    }
+
+    public static Set<String> findDuplicates(List<String> data) {
+        Set<String> uniqueItems = new HashSet<>();
+        Set<String> duplicates = new HashSet<>();
+        for (String item : data) {
+            if (!uniqueItems.add(item)) {
+                duplicates.add(item);
+            }
+        }
+        return duplicates;
     }
 
     protected WebElement waitForElementClickable(WebElement ele) {
