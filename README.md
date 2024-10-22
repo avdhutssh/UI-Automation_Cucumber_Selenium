@@ -7,7 +7,7 @@
     #/***************************************************/
 -->
 
-# 🏀 UI Automation Using Selenium, Java, and Cucumber (Maven Project)
+# 💻 UI Automation Using Selenium, Java, and Cucumber (Maven Project)
 
 ## 📑 Table of Contents
 
@@ -76,7 +76,7 @@ This project follows the **Page Object Model (POM)** approach and includes compo
 ├── target/                                    # Compiled output and cucumber reports
 ├── pom.xml                                    # Maven project file
 └── TestNG.xml                                # TestNG configuration file for managing test suite execution by passing the tags
-```plaintext
+```
 
 ## ▶️ Getting Started
 
@@ -113,7 +113,7 @@ mvn clean test
 mvn test -Dcucumber.filter.tags="@Regression"
 ```
 
-### 2. Execute with Specific browser
+### 3. Execute with Specific browser
 ```bash
 mvn clean test -Dbrowser=firefox
 ```
