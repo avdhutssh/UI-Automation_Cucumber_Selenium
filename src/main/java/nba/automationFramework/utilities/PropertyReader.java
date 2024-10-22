@@ -25,15 +25,7 @@ public class PropertyReader {
         }
         return propInstance;
     }
-
-    public static synchronized boolean getAttachFileFlag() {
-        return attachFile;
-    }
-
-    public static synchronized void setAttachFileFlag(boolean flag) {
-        attachFile = flag;
-    }
-
+    
     public String getProperty(String propertyName) {
         Properties prop = new Properties();
         try (InputStream inputStream = getClass().getClassLoader().getResourceAsStream("config.properties")) {
