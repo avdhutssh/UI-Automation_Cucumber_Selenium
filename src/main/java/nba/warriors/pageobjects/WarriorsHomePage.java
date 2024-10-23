@@ -58,7 +58,12 @@ public class WarriorsHomePage extends ElementUtils {
         log.info("Hovering over Shop menu");
         hoverOverElement(shopMenuBar);
         log.info("Clicking on Men's link");
-        clickOnElement(mensLink);
+        try {
+            clickOnElement(mensLink);
+        } catch (Exception e) {
+            clickOnElementJS(mensLink);
+        }
+
 
         log.info("Switching to new window for Warriors Shop page");
         switchToWindow(2);
