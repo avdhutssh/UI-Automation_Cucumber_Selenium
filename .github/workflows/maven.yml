@@ -1,0 +1,50 @@
+name: Cucumber Selenium Tests on Windows
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  Selenium-Test:
+    runs-on: windows-latest
+    env:
+      browserName: chrome
+      isHeadless: true
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Cache Maven packages
+        uses: actions/cache@v3
+        with:
+          path: ~/.m2
+          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+          restore-keys: |
+            ${{ runner.os }}-maven-
+
+      - name: Set up Java and Maven
+        uses: actions/setup-java@v2
+        with:
+          distribution: "temurin"
+          java-version: "21"
+
+      - name: Install Maven
+        run: choco install maven
+
+      - name: Set up ChromeDriver
+        run: choco install chromedriver
+
+      - name: Run tests with Maven
+        run: mvn clean test
+
+      - name: Upload Extent Report as artifact
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: CucumberReport
+          path: target/cucumber-reports/cucumber-html-report.html
