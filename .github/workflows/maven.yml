@@ -9,7 +9,7 @@ on:
       - main
 
 jobs:
-  Selenium-Test:
+  Cucumber-Selenium-Test:
     runs-on: windows-latest
     env:
       browserName: chrome
