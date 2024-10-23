@@ -56,13 +56,13 @@ This project follows the **Page Object Model (POM)** approach and includes compo
 │   │   │   │   ├── ElementUtils.java          # Methods for element interactions
 │   │   │   │   ├── FileUtils.java          # Methods for file handling
 │   │   │   │   ├── PropertyReader.java        # Reads properties from config files
-│   │   │   ├── 2. Warriors/PageObjects/                
+│   │   │   ├── 2. Warriors/PageObjects/
 │   │   │   │   ├── WarriorsHomePage.java      # Home page interactions for Warriors website
 │   │   │   │   ├── WarriorsShopPage.java      # Shop page interactions
 │   │   │   │   ├── WarriorsNewsFeaturesPage.java  # News & Features interactions
-│   │   │   ├── 3. Bulls/PageObjects/                
+│   │   │   ├── 3. Bulls/PageObjects/
 │   │   │   │   ├── BullsHomePage.java      # Home page interactions for Bulls website
-│   │   │   ├── 4. Sixers/PageObjects/               
+│   │   │   ├── 4. Sixers/PageObjects/
 │   │   │   │   ├── SixersHomePage.java      # Home page interactions for Sixers website
 │   └── resources/                             # Configuration files (e.g., log4j.xml, config.properties)
 ├── test/
@@ -107,21 +107,31 @@ mvn clean install
 This will download all required dependencies such as Selenium, Cucumber, TestNG and Log4j.
 
 ## 🚀 Test Execution
+
 Run all the test cases using Maven:
 
 ### 1. Execute All Tests
+
 ```bash
 mvn clean test
 ```
 
 ### 2. Execute with Specific Tags
+
 ```bash
 mvn test -Dcucumber.filter.tags="@Regression"
 ```
 
 ### 3. Execute with Specific browser
+
 ```bash
 mvn clean test -Dbrowser=firefox
+```
+
+### 4. Execute by controlling the parallel thread count
+
+```bash
+mvn clean test -Ddataproviderthreadcount=4
 ```
 
 ## 📜 Scenario Overview
@@ -134,7 +144,7 @@ mvn clean test -Dbrowser=firefox
 
 ### Derived Product 1 Scenarios
 
-1. Verify and retrive the title of each slide present below tickets menu 
+1. Verify and retrive the title of each slide present below tickets menu
 
 ### Derived Product 2 Scenarios
 
@@ -142,7 +152,7 @@ mvn clean test -Dbrowser=firefox
 
 ## 🎯 Reporting
 
-This project uses  **cucumber Reports** for detailed reporting of scenario executions, including logs, screenshots, and status updates.
+This project uses **cucumber Reports** for detailed reporting of scenario executions, including logs, screenshots, and status updates.
 
 To view the generated reports:
 
@@ -159,7 +169,7 @@ You can also capture screenshots for failed scenario and view them in the cucumb
 
 You can integrate the project with Jenkins for Continuous Integration. Follow these steps:
 
-1. Install Maven  plugin
+1. Install Maven plugin
 2. Set up a Maven Project Dashboard in Jenkins.
 3. Clone the GitHub repository under Source Code Management
 4. In the Build section, add the following command to run the tests:
@@ -168,6 +178,16 @@ You can integrate the project with Jenkins for Continuous Integration. Follow th
    ```
 
 ![Jenkins-Execution](/Misc/Jenkins.png)
+
+### 2. GitHub Actions
+
+This project also uses **GitHub Actions** for CI/CD:
+
+- The CI pipeline triggers on every push or pull request to the main branch.
+- It automatically runs the test cases using the TestNG suite on github provided Windows machine and generates the Cucumber Reports as Artifacts.
+- The results can be viewed in the `Actions` tab of the GitHub repository.
+- Refer workflow yaml file for same. [Workflow file](/.github/workflows/maven.yml)
+  ![GitHub Actions](/Misc/GitHub_Actions.png)
 
 
 ## 📧 Contacts
