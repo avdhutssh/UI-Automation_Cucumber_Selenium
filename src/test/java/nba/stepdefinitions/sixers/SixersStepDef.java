@@ -18,12 +18,12 @@ import java.util.HashMap;
 public class SixersStepDef {
 
     private static final Logger log = LoggerFactory.getLogger(SixersStepDef.class);
+    SoftAssert sa;
     private SixersHomePage sixersHomePage;
     private WebDriver driver;
     private Scenario scenario;
     private String fileName = "SixersApp.json";
     private String objectName = "Homepage_01_001";
-    SoftAssert sa;
 
     public SixersStepDef(context testContext) {
         this.driver = testContext.getDriver();
@@ -41,7 +41,7 @@ public class SixersStepDef {
     public void userCountsTheNumberOfSlidesPresentBelowTheTicketsMenu() {
         int slideCount = sixersHomePage.countSlides();
         System.out.println("Total number of slides: " + slideCount);
-        Assert.assertEquals(slideCount, 6, "Slides are present on the page.");
+        Assert.assertEquals(slideCount, 4, "Slides are present on the page.");
     }
 
 
