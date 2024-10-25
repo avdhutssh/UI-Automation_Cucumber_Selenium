@@ -153,13 +153,13 @@ public class BasePage {
     protected void waitForElementToBePresent(WebElement ele, int timeoutInSeconds) {
         log.info("Waiting for element to be displayed: " + ele.toString());
         long endTime = System.nanoTime() + timeoutInSeconds * 1_000_000_000L;
+        boolean isDisplayed = false;
         while (System.nanoTime() < endTime) {
-            try {
-                ele.isDisplayed();
-            } catch (NoSuchElementException e) {
-            }
+            isDisplayed = ele.isDisplayed();
         }
-        isElementVisible(ele);
+        if (!isDisplayed) {
+            throw new NoSuchElementException("No such element is present");
+        }
     }
 
     protected void waitForPageLoad() {
