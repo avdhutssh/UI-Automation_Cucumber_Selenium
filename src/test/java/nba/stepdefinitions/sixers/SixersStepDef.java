@@ -10,7 +10,6 @@ import nba.sixers.pageobjects.SixersHomePage;
 import org.openqa.selenium.WebDriver;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.testng.Assert;
 import org.testng.asserts.SoftAssert;
 
 import java.util.HashMap;
@@ -41,7 +40,7 @@ public class SixersStepDef {
     public void userCountsTheNumberOfSlidesPresentBelowTheTicketsMenu() {
         int slideCount = sixersHomePage.countSlides();
         System.out.println("Total number of slides: " + slideCount);
-        Assert.assertEquals(slideCount, 4, "Slides are present on the page.");
+        sa.assertEquals(slideCount, 4, "Slides are present on the page.");
     }
 
 
